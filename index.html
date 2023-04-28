@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        :root {
+            --bg1: #003169;
+            --bg2: #011b40;
+            --yellow: #e9e335;
+            --white: #ffffff;
+            --black: #000000;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            
+        }
+        body{
+            background-color: var(--bg2);
+        }
+
+        .gyn-button {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 10px 20px;
+            transform: skewX(-15deg);
+        }
+
+        .gyn-button p {
+            color: var(--black) !important;
+            transform: skewX(15deg) !important;
+            font-weight: 700;
+            margin-bottom: auto;
+        }
+
+        .gym-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .navbar-light {
+            background-color: transparent !important;
+        }
+
+        .navbar-logo {
+            width: calc(60px + 4vw)
+        }
+
+
+
+        .hero-gym-content {
+            background-color: var(--bg1);
+            color: var(--white);
+        }
+
+        .hero-gym-content span {
+            color: var(--yellow);
+        }
+
+
+        .hero-price-box {
+            padding: calc(1rem + .5vw*3);
+            background-color: var(--bg2);
+            color: var(--yellow);
+        }
+
+        .hero-location-box {
+            padding: calc(1rem + .5vw*3);
+            background-color: var(--bg1);
+            color: var(--yellow);
+        }
+
+        .hero-equipment-box {            
+            padding: calc(1rem + .5vw*3);
+            background-color: var(--bg2);
+            color: var(--yellow);
+        }
+        .border-yellow{
+            border: 1px solid var(--yellow);
+        }
+        .bending-box{
+            transform-origin: top left;
+            transform:skewX(-40deg);
+        }
+        .skew-back-word{
+            transform:skewX(40deg);
+            background-color: transparent;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding-right: 1rem;
+                padding-left: 0.8rem;
+            }
+        }
+
+        @media (max-width:992px) {
+            * {
+                font-size: 10px;
+            }
+            .nav-item {
+                text-align: end;
+            }
+
+            .navbar-right {
+                text-align: end;
+            }
+        }
+
+        @media (max-width:576px) {
+            * {
+                font-size: 7px;
+            }
+            .hero-gym-content {
+                padding-top: 30px;
+            }
+
+            .hero-image-section {
+                width: 100%;
+            }
+
+            .hero-gym-discription {
+                width: 70%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="gym-header">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 ">
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand" href="#"><img class="navbar-logo" src="./assets/images/gymlogo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-right justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav me-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>
+                    <button class="gyn-button btn-warning">
+                        <p>Join Us</p>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="container-fluid p-0">
+            <div class="row m-0">
+                <div class="col-sm-12 d-flex flex-nowrap p-0">
+                    <div class="col-sm-6 hero-gym-content d-flex flex-column align-items-start justify-content-center">
+                        <div class="col-sm-8 mx-auto hero-gym-discription">
+                            <h4>MAKE YOUR SELF HEALTHY AND FIT</h4>
+                            <h1>FIND YOUR <span><h1 class="d-inline">FITNESS</h1></span> JOURNEY</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum nam tempora officiis
+                                quod
+                                porro officia voluptas natus? Nemo!</p>
+                            <button class="gyn-button btn-warning">
+                                <p>Join Us</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 hero-image-section">
+                        <div class="col-sm-12">
+                            <img src="./assets/images/gymheroimage.jpg" alt="" class="hero-image img-fluid">
+                        </div>
+                        <div class="col-sm-12 d-flex ">
+                            <div class="col-sm-4 hero-price-box border-yellow bending-box"><p class="skew-back-word">Affordable price</p></div>
+                            <div class="col-sm-4 hero-location-box border-yellow bending-box"><p class="skew-back-word">Convenient Location</p></div>
+                            <div class="col-sm-4 hero-equipment-box border-yellow bending-box"><p class="skew-back-word">Modern Equipment</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
