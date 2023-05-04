@@ -1,0 +1,38 @@
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 0.8rem;
+    }
+}
+
+@media (max-width:992px) {
+    * {
+        font-size: 10px;
+    }
+
+    .nav-item {
+        text-align: end;
+    }
+
+    .navbar-right {
+        text-align: end;
+    }
+}
+
+@media (max-width:576px) {
+    * {
+        font-size: 7px;
+    }
+
+    .hero-gym-content {
+        padding-top: 30px;
+    }
+
+    .hero-image-section {
+        width: 100%;
+    }
+
+    .hero-gym-discription {
+        width: 70%;
+    }
+}
