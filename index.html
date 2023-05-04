@@ -116,20 +116,23 @@
             text-shadow: 0px 0px 2px black;
         }
 
-        /* .fitness-journey-image-wrapper{
+        .fitness-journey-image-wrapper {
             position: relative;
         }
-        .fitness-journey-image-wrapper::before{
+
+        .fitness-journey-image-wrapper::before {
             content: "";
-            width: 110%;
-            height: 110%;
+            width: 107.5%;
+            height: 108.3%;
+            clip-path: polygon(7% 1%, 88% 12%, 100% 93%, 0 100%);
             background-color: yellow;
-            transform: skew(-5deg, -5deg);
+            /* transform: skew(-5deg, -5deg); */
             position: absolute;
-            top: -5%;
-            right: -5%;
+            top: -0.6%;
+            right: 0%;
             z-index: -1;
-        } */
+        }
+
         /* .fitness-journey-image{
             border-right: 100px solid;
             border-image-slice: 1;
@@ -145,9 +148,11 @@
         .fitness-journey-heading {
             line-height: 135%;
         }
-        .text-light{
-            color:#8d9cac !important;
+
+        .text-light {
+            color: #8d9cac !important;
         }
+
         .fitness-journey-description {
             color: #8d9cac;
             font-size: .95rem;
@@ -177,8 +182,40 @@
 
         .pricing-plan-container {
             background-color: var(--bg1);
+            height: 100%;
+            width: 100%;
+            border: 0;
+            clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
+            border: 8px ridge rgba(170, 50, 220, .6);
+            /* position: relative; */
         }
-        .client-views{
+        .box{
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .box::before {
+            content: "";
+            width: 100%;
+            height: 20%;
+            background-color: var(--yellow);
+            position: absolute;
+            top: 0;
+            right: -4%;
+            border-radius: 10%/50%;
+            background-blend-mode: multiply;
+        }
+
+        .client-image-wrapper {
+            background-color: var(--bg1);
+            
+        }
+
+        .client-image {
+            border-radius: 50%;
+        }
+
+        .client-views {
             font-size: .9rem;
         }
     </style>
@@ -373,21 +410,62 @@
                         </span>Plan</h3>
                 </div>
                 <div class="col-sm-10 mx-auto d-flex flex-wrap justify-content-center">
-                    <div
-                        class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center m-4 pt-5 pb-4">
-                        <div>
-                            <h2 class="text-white text-center mb-3">$20</h2>
-                            <h3 class="text-color-yellow text-center mb-3">One Day</h3>
-                            <h6 class="text-white text-center mb-2">One Hour Workout</h6>
-                            <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
-                        </div>
-                        <div class="text-center">
-                            <button class="gyn-button btn-warning">
-                                <p>Join Us</p>
-                            </button>
+                    <div class=" col box m-4">
+                        <div
+                            class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center pt-5 pb-4">
+                            <div>
+                                <div>
+                                    <h2 class="text-white text-center mb-3">$20</h2>
+                                    <h3 class="text-color-yellow text-center mb-3">One Day</h3>
+                                    <h6 class="text-white text-center mb-2">One Hour Workout</h6>
+                                    <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
+                                </div>
+                                <div class="text-center">
+                                    <button class="gyn-button btn-warning">
+                                        <p>Join Us</p>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div
+                    <div class=" col box m-4">
+                        <div
+                            class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center pt-5 pb-4">
+                            <div>
+                                <div>
+                                    <h2 class="text-white text-center mb-3">$20</h2>
+                                    <h3 class="text-color-yellow text-center mb-3">One Day</h3>
+                                    <h6 class="text-white text-center mb-2">One Hour Workout</h6>
+                                    <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
+                                </div>
+                                <div class="text-center">
+                                    <button class="gyn-button btn-warning">
+                                        <p>Join Us</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col box m-4">
+                        <div
+                            class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center pt-5 pb-4">
+                            <div>
+                                <div>
+                                    <h2 class="text-white text-center mb-3">$20</h2>
+                                    <h3 class="text-color-yellow text-center mb-3">One Day</h3>
+                                    <h6 class="text-white text-center mb-2">One Hour Workout</h6>
+                                    <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
+                                </div>
+                                <div class="text-center">
+                                    <button class="gyn-button btn-warning">
+                                        <p>Join Us</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div
                         class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center m-4 pt-5 pb-4">
                         <div>
                             <h2 class="text-white text-center mb-3">$50</h2>
@@ -416,7 +494,7 @@
                                 <p>Join Us</p>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -437,7 +515,7 @@
                 <div class="swiper-slide">
                     <div class="our-client-profile">
                         <div class="client-image-wrapper">
-                            <img src="./assets/images/1.jpg" alt="" class="img-fluid client-image">
+                            <img src="./assets/images/client1.png" alt="" class="img-fluid client-image">
                         </div>
                         <div class="client-profile-info mt-3">
                             <div class="d-flex justify-content-between">
@@ -449,23 +527,9 @@
                                         class="fa-sharp fa-solid fa-star"></i></span>
                             </div>
                             <h6 class="text-color-yellow text-uppercase">OUR CLIENT</h6>
-                            <p class="client-views text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatum quis nobis ea autem repellendus dolorum, qui consequuntur sequi iste eos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="position-relative">
-                        <img src="./assets/images/2.jpg" alt="classes" class="img-fluid">
-                        <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
-                            <h5 class="text-center text-white text-shadow">YOGA</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="position-relative">
-                        <img src="./assets/images/3.jpg" alt="classes" class="img-fluid">
-                        <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
-                            <h5 class="text-center text-white text-shadow">AEROBIC</h5>
+                            <p class="client-views text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Nihil voluptatum quis nobis ea autem repellendus dolorum, qui consequuntur sequi iste
+                                eos.</p>
                         </div>
                     </div>
                 </div>
