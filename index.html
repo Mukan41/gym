@@ -42,6 +42,20 @@
             color: var(--black);
             padding: 10px 20px;
             transform: skewX(-15deg);
+            border: 0;
+            transition: .2s;
+        }
+        .gyn-button:hover{
+            transform: skewX(10deg);
+            transition: .2s;
+            background-color: var(--bg2);
+            border:1px solid yellow;
+            
+        }
+        .gyn-button:hover p{
+            transform: skewX(-10deg) !important;
+            transition: .2s;
+            color: yellow !important;
         }
 
         .gyn-button p {
@@ -49,6 +63,7 @@
             transform: skewX(15deg) !important;
             font-weight: 700;
             margin-bottom: auto;
+            transition: .2s;
         }
 
         .gym-header {
@@ -81,7 +96,7 @@
 
         .hero-location-box {
             padding: calc(1rem + .5vw*3);
-            background-color: var(--bg1);
+            background-color: var(--bg2);
             color: var(--yellow);
         }
 
@@ -146,8 +161,8 @@
         }
 
 
-        .swiper-button-next,
-        .swiper-button-prev {
+        .prenext-icon.swiper-button-next,
+        .prenext-icon.swiper-button-prev {
             position: initial !important;
             width: inherit !important;
             height: inherit !important;
@@ -157,8 +172,8 @@
             display: inline !important;
         }
 
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
+        .prenext-icon.swiper-button-next:after,
+        .prenext-icon.swiper-button-prev:after {
             font-family: swiper-icons;
             font-size: inherit;
             text-transform: none !important;
@@ -245,12 +260,33 @@
             </div>
         </nav>
     </header>
+
+    <style>
+        .bending-box:hover{
+            background-color: var(--bg1);
+        }
+        @media (max-width:576px) {
+            .hero-section-mobile {
+                flex-direction: column-reverse;
+            }
+
+            .hero-gym-discription {
+                text-align: center;
+            }
+
+            .bending-box {
+                transform-origin: top left;
+                transform: skewX(0deg);
+            }
+        }
+    </style>
     <section class="hero-section mb-5">
         <div class="container-fluid p-0">
             <div class="row m-0">
-                <div class="col-sm-12 d-flex flex-nowrap p-0">
-                    <div class="col-sm-6 hero-gym-content d-flex flex-column align-items-start justify-content-center">
-                        <div class="col-sm-8 mx-auto hero-gym-discription">
+                <div class="col-sm-12 col-12 d-flex flex-wrap hero-section-mobile p-0">
+                    <div
+                        class="col-sm-6 col-12 hero-gym-content d-flex flex-column align-items-start justify-content-center">
+                        <div class="col-sm-8 mx-auto hero-gym-discription pb-5">
                             <h4>MAKE YOUR SELF HEALTHY AND FIT</h4>
                             <h1>FIND YOUR <span class="text-color-yellow">
                                     <h1 class="d-inline">FITNESS</h1>
@@ -263,18 +299,18 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-sm-6 hero-image-section">
+                    <div class="col-sm-6 col-12 hero-image-section">
                         <div class="col-sm-12">
                             <img src="./assets/images/gymheroimage.jpg" alt="" class="hero-image img-fluid">
                         </div>
-                        <div class="col-sm-12 d-flex ">
-                            <div class="col-sm-4 hero-price-box border-yellow bending-box">
+                        <div class="col-sm-12 col-12 d-flex ">
+                            <div class="col-sm-4 col-4 hero-price-box border-yellow bending-box">
                                 <p class="skew-back-word">Affordable price</p>
                             </div>
-                            <div class="col-sm-4 hero-location-box border-yellow bending-box">
+                            <div class="col-sm-4 col-4 hero-location-box border-yellow bending-box">
                                 <p class="skew-back-word">Convenient Location</p>
                             </div>
-                            <div class="col-sm-4 hero-equipment-box border-yellow bending-box">
+                            <div class="col-sm-4 col-4 hero-equipment-box border-yellow bending-box">
                                 <p class="skew-back-word">Modern Equipment</p>
                             </div>
                         </div>
@@ -319,8 +355,8 @@
                     <h3 class="text-white ">OUR BEST <span class="text-color-yellow">
                             <h3 class="d-inline">CLASSES</h3>
                         </span></h3>
-                    <strong><i class="swiper-button-prev text-color-yellow me-3 fa-2x"></i><i
-                            class="swiper-button-next text-color-yellow ms-3 me-2 fa-2x"></i></strong>
+                    <strong><i class="prenext-icon swiper-button-prev text-color-yellow me-3 fa-2x"></i><i
+                            class="prenext-icon swiper-button-next text-color-yellow ms-3 me-2 fa-2x"></i></strong>
                 </div>
             </div>
             <div class="swiper-wrapper">
@@ -394,7 +430,7 @@
     <section class="start-journey-section pt-5 mb-5">
         <div class="container">
             <div class="row p-4">
-                <div class="col-sm-6 p-4">
+                <div class="col-sm-6 col-11 mx-auto mb-5 p-4">
                     <div class="fitness-journey-image-wrapper">
                         <img src="./assets/images/fitnessjourney.jpg" alt="" class="img-fluid fitness-journey-image">
                     </div>
@@ -419,7 +455,7 @@
             </div>
         </div>
     </section>
-    <section class="pricing-section">
+    <section class="pricing-section mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -483,18 +519,95 @@
         </div>
     </section>
 
-    <section class="our-client-section py-4 mb-5">
+    <style>
+        .trainer-container {
+            border-bottom: 1px solid #8d9cac;
+            /* position: relative; */
+        }
+
+        .trainer-background-container {
+            height: 80%;
+            width: 100%;
+            top: 20%;
+            left: 0;
+            clip-path: polygon(0 43%, 100% 0, 100% 100%, 0% 100%);
+            border-top: 1px solid #8d9cac;
+            background-image: url('./assets/images/trainerbg.jpg');
+            background-size: cover;
+            background-position: bottom center;
+            opacity: .3;
+            z-index: -1;
+        }
+
+        .trainer-profile-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <section class="our-trainer-section py-3 mt-5 mb-5">
+        <div class="container-fluid trainer-container swiper mySwipertrainer">
+            <div class="row">
+                <div class="col-sm-12 col-11 mx-auto mb-5  justify-content-between align-items-center">
+                    <h3 class="text-white text-uppercase text-center">Our Professional <span class="text-color-yellow">
+                            <h3 class="d-inline">Trainers</h3>
+                        </span></h3>
+                </div>
+            </div>
+            <div class="swiper-wrapper ">
+                <div class="position-absolute trainer-background-container"></div>
+                <div class="swiper-slide">
+                    <div class=" position-relative ">
+                        <img src="./assets/images/trainer1.png" alt="" class="img-fluid">
+                        <div class="trainer-profile-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-uppercase text-white fw-bold">Yoga<br> Trainer</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class=" position-relative ">
+                        <img src="./assets/images/trainer2.png" alt="" class="img-fluid">
+                        <div class="trainer-profile-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-uppercase text-white fw-bold">Aerobic<br> Trainer</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class=" position-relative ">
+                        <img src="./assets/images/trainer3.png" alt="" class="img-fluid">
+                        <div class="trainer-profile-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-uppercase text-white fw-bold">Streatching<br> Trainer</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class=" position-relative ">
+                        <img src="./assets/images/trainer4.png" alt="" class="img-fluid">
+                        <div class="trainer-profile-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-uppercase text-white fw-bold">Bodybuilder<br> Trainer</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <strong><i class="swiper-button-prev text-color-yellow me-3 fa-2x"></i><i
+                    class="swiper-button-next text-color-yellow ms-3 me-2 fa-2x"></i></strong>
+        </div>
+    </section>
+
+    <section class="our-client-section py-5 mb-5">
         <div class="container swiper mySwiper_client">
             <div class="row">
-                <div class="col-sm-12 col-11 mx-auto mb-4 d-flex justify-content-between align-items-center">
+                <div class="col-sm-12 col-11 mx-auto mb-5 d-flex justify-content-between align-items-center">
                     <h3 class="text-white text-uppercase">MEET OUR <span class="text-color-yellow">
                             <h3 class="d-inline">CLIENTS</h3>
                         </span></h3>
-                    <strong><i class="swiper-button-prev text-color-yellow me-3 fa-2x"></i><i
-                            class="swiper-button-next text-color-yellow ms-3 me-2 fa-2x"></i></strong>
+                    <strong><i class="prenext-icon swiper-button-prev text-color-yellow me-3 fa-2x"></i><i
+                            class="prenext-icon swiper-button-next text-color-yellow ms-3 me-2 fa-2x"></i></strong>
                 </div>
             </div>
-            <div class="swiper-wrapper">
+            <div class=" swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="our-client-profile">
                         <div class="client-image-wrapper">
@@ -566,14 +679,14 @@
     <section class="blog-section mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 my-3">
+                <div class="col-sm-12 col-11 mx-auto my-3">
                     <h3 class="text-white text-uppercase">Our Latest <span class="text-color-yellow">
                             <h3 class="d-inline">blogs</h3>
                         </span></h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-11 mx-auto">
                     <img src="./assets/images/blogmain.jpg" alt="" class="img-fluid mb-3">
                     <h5 class="text-white">Don't give up on your dreams, or your dreams will give up on you</h5>
                     <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe!
@@ -583,25 +696,25 @@
                     <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
                             class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
-                <div class="col-sm-6 ">
-                    <div class="col-sm-12 d-flex ">
-                        <div class="col-sm-4 p-3">
+                <div class="col-sm-6 col-11 mx-auto mt-3">
+                    <div class="col-sm-12 d-flex mb-3">
+                        <div class="col-sm-3 col-md-4 col-3 p-3">
                             <img src="./assets/images/client1.png" alt="" class="img-fluid">
                         </div>
-                        <div class="col-sm-8 d-flex flex-column justify-content-center">
-                            <h5 class="text-white">Exercise is labour without weariness</h5>
+                        <div class="col-sm-9 col-md-8 col-9 d-flex flex-column justify-content-center">
+                            <h5 class="text-white h5">Exercise is labour without weariness</h5>
                             <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad iusto
                                 harum at aspernatur...</p>
                             <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
                                     class="fa-solid fa-arrow-up-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-sm-12 d-flex ">
-                        <div class="col-sm-4 p-3">
+                    <div class="col-sm-12 d-flex mb-3">
+                        <div class="col-sm-3 col-md-4 col-3 p-3">
                             <img src="./assets/images/client3.png" alt="" class="img-fluid">
                         </div>
-                        <div class="col-sm-8 d-flex flex-column justify-content-center">
-                            <h5 class="text-white">Success usualy comes to those who are too busy to be looking for it
+                        <div class="col-sm-9 col-md-8 col-9 d-flex flex-column justify-content-center">
+                            <h5 class="text-white h5">Success usualy comes to those who are too busy to be looking for it
                             </h5>
                             <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad iusto
                                 harum at aspernatur...</p>
@@ -609,12 +722,12 @@
                                     class="fa-solid fa-arrow-up-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-sm-12 d-flex ">
-                        <div class="col-sm-4 p-3">
+                    <div class="col-sm-12 d-flex mb-3">
+                        <div class="col-sm-3 col-md-4 col-3 p-3">
                             <img src="./assets/images/client2.png" alt="" class="img-fluid">
                         </div>
-                        <div class="col-sm-8 d-flex flex-column justify-content-center">
-                            <h5 class="text-white">Put all excuses aside and remember this: you are capable</h5>
+                        <div class="col-sm-9 col-md-8 col-9 d-flex flex-column justify-content-center">
+                            <h5 class="text-white h5">Put all excuses aside and remember this: you are capable</h5>
                             <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad iusto
                                 harum at aspernatur...</p>
                             <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
@@ -663,15 +776,26 @@
             width: 80%;
             background-color: yellow;
         }
+
+        .motivation-image {
+            float: right;
+        }
+
+        /* @media (max-width:576px){
+            .motivation-section .row{
+               flex-direction: column-reverse;
+            }
+        } */
     </style>
 
-    <section class="motivation-section mb-5">
+    <section class="motivation-section py-4 mb-5">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 d-flex flex-column justify-content-center">
+            <div class="row d-flex ">
+
+                <div class="col-sm-6 col-11 mx-auto mb-4 d-flex flex-column justify-content-center">
                     <div class="col-sm-12 my-3">
-                        <h3 class="text-white text-uppercase">Our Latest <span class="text-color-yellow">
-                                <h3 class="d-inline">blogs</h3>
+                        <h3 class="text-white text-uppercase">Our <span class="text-color-yellow">
+                                <h3 class="d-inline">Motivation</h3>
                             </span></h3>
                     </div>
                     <div class="col-sm-12 mb-3">
@@ -699,7 +823,7 @@
                         <div class="progress progress-client"></div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-11 mx-auto">
                     <img src="./assets/images/ourmotivation.jpg" alt="" class="img-fluid">
                 </div>
             </div>
@@ -714,22 +838,22 @@
     <section class="social-follow-section py-5">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 my-3">
+                <div class="col-sm-12 col-11 mx-auto mt-2 my-5">
                     <h3 class="text-white text-uppercase">Follow us on <br><span class="text-color-yellow">
                             <h3 class="d-inline">Instagram</h3>
                         </span></h3>
                 </div>
-                <div class="row d-flex gap-3">
-                    <div class="col">
+                <div class="row d-flex">
+                    <div class="col-5 col-sm-6 col-md-3 mx-auto">
                         <img src="./assets/images/follow1.jpg" alt="" class="img-fluid pb-5">
                     </div>
-                    <div class="col">
+                    <div class="col-5 col-sm-6 col-md-3 mx-auto">
                         <img src="./assets/images/follow2.jpg" alt="" class="img-fluid pt-5">
                     </div>
-                    <div class="col">
+                    <div class="col-5 col-sm-6 col-md-3 mx-auto">
                         <img src="./assets/images/follow3.jpg" alt="" class="img-fluid pb-5">
                     </div>
-                    <div class="col">
+                    <div class="col-5 col-sm-6 col-md-3 mx-auto">
                         <img src="./assets/images/follow4.jpg" alt="" class="img-fluid pt-5">
                     </div>
                 </div>
@@ -738,26 +862,126 @@
     </section>
 
     <style>
-        .footer .img-fluid{
-            max-width: 50%;
+        .footer .img-fluid {
+            max-width: 40%;
         }
-        .footer form input[type='mail']{
+
+        .footer form input[type='mail'] {
             border: 1px solid yellow;
             background-color: var(--bg1);
-            padding:5px 7px;
+            padding: 5px 7px;
             color: var(--white);
         }
-        .footer form input[type='mail']:focus{
-            outline: 0 ;
+
+        .footer form input[type='mail']:focus {
+            outline: 0;
         }
-        .footer form button{
+
+        .footer form button {
             border: 1px solid yellow;
             background-color: yellow;
-            padding-left: 10px ;
-            padding-right: 10px ;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .footer-copyright{
+            background-color: var(--bg1);
         }
     </style>
-    
+    <footer>
+        <section class="footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-sm-12 col-11 mx-auto d-flex flex-wrap">
+                        <div class="col-sm-6 col-6 pe-3">
+                            <img src="./assets/images/gymlogo.png" alt="" class="img-fluid footer-gym-logo mb-2">
+                            <p class="text-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+                                dolorum ipsam explicabo maiores beatae nesciunt obcaecati facere quam non itaque!</p>
+                        </div>
+                        <div class="col-sm-6 col-6 d-flex">
+                            <div class="col-sm-5 col-6">
+                                <h5 class="text-uppercase text-color-yellow">company</h5>
+                                <ul class="p-0 list-unstyled">
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Pricing</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-7 col-6">
+                                <h5 class="text-uppercase text-color-yellow">Help</h5>
+                                <ul class="p-0 list-unstyled">
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Customer support</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Terms & Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-light">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-11 mx-auto d-flex">
+                        <div class="col-sm-6 col-6">
+                            <h5 class="text-uppercase text-color-yellow">Contact Us</h5>
+                            <ul class="p-0 list-unstyled">
+                                <li class="d-flex ">
+                                    <span class="text-color-yellow me-2"><i class="fa-solid fa-phone"></i></span><a
+                                        href="#" class="text-decoration-none text-light">+91 1231231233</a>
+                                </li>
+                                <li>
+                                    <span class="text-color-yellow me-2"><i class="fa-regular fa-envelope"></i></span><a
+                                        href="#" class="text-decoration-none text-light">test@testmail.com</a>
+                                </li>
+                                <li>
+                                    <span class="text-color-yellow me-2"><i
+                                            class="fa-solid fa-location-dot"></i></span><a href="#"
+                                        class="text-decoration-none text-light">jodhpur, Rajastha, India</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-6">
+                            <h5 class="text-uppercase text-color-yellow">Newsletter</h5>
+                            <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,
+                                aliquid.</p>
+                            <form action="" class="d-flex">
+                                <input type="mail" class="" required>
+                                <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text-light mb-0 py-1 text-center">&#169; Copyright 2023. All Right Reserved. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -774,7 +998,34 @@
             },
             breakpoints: {
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 35,
+                },
+            },
+        });
+        var swiper = new Swiper(".mySwipertrainer", {
+            // slidesPerView: 4,
+            // spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
                     spaceBetween: 20,
                 },
                 576: {
@@ -801,7 +1052,7 @@
             },
             breakpoints: {
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 20,
                 },
                 576: {
@@ -818,6 +1069,8 @@
                 },
             },
         });
+
+
     </script>
 </body>
 
