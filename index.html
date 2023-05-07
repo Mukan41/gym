@@ -105,13 +105,6 @@
             background-color: transparent;
         }
 
-        .img-overlay {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            background: linear-gradient(transparent, black);
-        }
-
         .text-shadow {
             text-shadow: 0px 0px 2px black;
         }
@@ -133,12 +126,6 @@
             z-index: -1;
         }
 
-        /* .fitness-journey-image{
-            border-right: 100px solid;
-            border-image-slice: 1;
-            border-width: 50px;
-            border-image-source: linear-gradient(135deg, black 60%, yellow 50%);
-        } */
 
         .fitness-journey-content {
             padding-right: 30px;
@@ -186,10 +173,10 @@
             width: 100%;
             border: 0;
             clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
-            border: 8px ridge rgba(170, 50, 220, .6);
             /* position: relative; */
         }
-        .box{
+
+        .box {
             position: relative;
             overflow-x: hidden;
         }
@@ -208,11 +195,13 @@
 
         .client-image-wrapper {
             background-color: var(--bg1);
-            
+            border: 1px solid #8d9cac;
+            box-shadow: 0px 3px 3px #8d9cac;
         }
 
         .client-image {
             border-radius: 50%;
+            box-shadow: 0px 0px 1px black;
         }
 
         .client-views {
@@ -294,6 +283,35 @@
             </div>
         </div>
     </section>
+
+    <style>
+        .img-overlay {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            /* background: linear-gradient(transparent, black); */
+        }
+
+        .img-overlay::after {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            content: "";
+            z-index: 5;
+            background: linear-gradient(transparent, black);
+            transform: translateY(0%);
+            transition: 0.5s;
+        }
+
+        .slider-item-category:hover .img-overlay::after {
+            transform: translateY(100%);
+            background: linear-gradient(transparent, black);
+        }
+
+        .slider-item-category h5 {
+            z-index: 6;
+        }
+    </style>
     <section class="our-classes-section py-4 mb-5">
         <div class="container swiper mySwiper">
             <div class="row">
@@ -307,7 +325,7 @@
             </div>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/1.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">STREACHING</h5>
@@ -315,7 +333,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/2.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">YOGA</h5>
@@ -323,7 +341,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/3.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">AEROBIC</h5>
@@ -331,7 +349,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/4.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">MUSCLE BUILDING</h5>
@@ -339,7 +357,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/1.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">STREACHING</h5>
@@ -347,7 +365,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/2.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">YOGA</h5>
@@ -355,7 +373,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/3.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">AEROBIC</h5>
@@ -363,7 +381,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="position-relative">
+                    <div class="position-relative slider-item-category">
                         <img src="./assets/images/4.jpg" alt="classes" class="img-fluid">
                         <div class="img-overlay position-absolute d-flex align-items-center justify-content-center ">
                             <h5 class="text-center text-white text-shadow">MUSCLE BUILDING</h5>
@@ -414,17 +432,15 @@
                         <div
                             class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center pt-5 pb-4">
                             <div>
-                                <div>
-                                    <h2 class="text-white text-center mb-3">$20</h2>
-                                    <h3 class="text-color-yellow text-center mb-3">One Day</h3>
-                                    <h6 class="text-white text-center mb-2">One Hour Workout</h6>
-                                    <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
-                                </div>
-                                <div class="text-center">
-                                    <button class="gyn-button btn-warning">
-                                        <p>Join Us</p>
-                                    </button>
-                                </div>
+                                <h2 class="text-white text-center mb-3">$20</h2>
+                                <h3 class="text-color-yellow text-center mb-3">One Day</h3>
+                                <h6 class="text-white text-center mb-2">One Hour Workout</h6>
+                                <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
+                            </div>
+                            <div class="text-center">
+                                <button class="gyn-button btn-warning">
+                                    <p>Join Us</p>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -432,17 +448,16 @@
                         <div
                             class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center pt-5 pb-4">
                             <div>
-                                <div>
-                                    <h2 class="text-white text-center mb-3">$20</h2>
-                                    <h3 class="text-color-yellow text-center mb-3">One Day</h3>
-                                    <h6 class="text-white text-center mb-2">One Hour Workout</h6>
-                                    <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
-                                </div>
-                                <div class="text-center">
-                                    <button class="gyn-button btn-warning">
-                                        <p>Join Us</p>
-                                    </button>
-                                </div>
+                                <h2 class="text-white text-center mb-3">$50</h2>
+                                <h3 class="text-color-yellow text-center mb-3">One Month</h3>
+                                <h6 class="text-white text-center mb-2">One Hour Workout</h6>
+                                <h6 class="text-white text-center mb-2">One Personal Trainer</h6>
+                                <h6 class="text-white text-center mb-5">Nutrition Session</h6>
+                            </div>
+                            <div class="text-center">
+                                <button class="gyn-button btn-warning">
+                                    <p>Join Us</p>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -450,58 +465,26 @@
                         <div
                             class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center pt-5 pb-4">
                             <div>
-                                <div>
-                                    <h2 class="text-white text-center mb-3">$20</h2>
-                                    <h3 class="text-color-yellow text-center mb-3">One Day</h3>
-                                    <h6 class="text-white text-center mb-2">One Hour Workout</h6>
-                                    <h6 class="text-white text-center mb-3">One Personal Trainer</h6>
-                                </div>
-                                <div class="text-center">
-                                    <button class="gyn-button btn-warning">
-                                        <p>Join Us</p>
-                                    </button>
-                                </div>
+                                <h2 class="text-white text-center mb-3">$80</h2>
+                                <h3 class="text-color-yellow text-center mb-3">One YEAR</h3>
+                                <h6 class="text-white text-center mb-2">One Hour Workout</h6>
+                                <h6 class="text-white text-center mb-2">One Personal Trainer</h6>
+                                <h6 class="text-white text-center mb-5">Nutrition Session</h6>
+                            </div>
+                            <div class="text-center">
+                                <button class="gyn-button btn-warning">
+                                    <p>Join Us</p>
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div
-                        class="pricing-plan-container col d-flex flex-column justify-content-between align-items-center m-4 pt-5 pb-4">
-                        <div>
-                            <h2 class="text-white text-center mb-3">$50</h2>
-                            <h3 class="text-color-yellow text-center mb-3">One Month</h3>
-                            <h6 class="text-white text-center mb-2">One Hour Workout</h6>
-                            <h6 class="text-white text-center mb-2">One Personal Trainer</h6>
-                            <h6 class="text-white text-center mb-5">Nutrition Session</h6>
-                        </div>
-                        <div class="text-center">
-                            <button class="gyn-button btn-warning">
-                                <p>Join Us</p>
-                            </button>
-                        </div>
-                    </div>
-                    <div
-                        class="pricing-plan-container  col d-flex flex-column justify-content-between align-items-center m-4 pt-5 pb-4">
-                        <div>
-                            <h2 class="text-white text-center mb-3">$80</h2>
-                            <h3 class="text-color-yellow text-center mb-3">One YEAR</h3>
-                            <h6 class="text-white text-center mb-2">One Hour Workout</h6>
-                            <h6 class="text-white text-center mb-2">One Personal Trainer</h6>
-                            <h6 class="text-white text-center mb-5">Nutrition Session</h6>
-                        </div>
-                        <div class="text-center">
-                            <button class="gyn-button btn-warning">
-                                <p>Join Us</p>
-                            </button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
     </section>
 
     <section class="our-client-section py-4 mb-5">
-        <div class="container swiper mySwiper">
+        <div class="container swiper mySwiper_client">
             <div class="row">
                 <div class="col-sm-12 col-11 mx-auto mb-4 d-flex justify-content-between align-items-center">
                     <h3 class="text-white text-uppercase">MEET OUR <span class="text-color-yellow">
@@ -533,11 +516,248 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="our-client-profile">
+                        <div class="client-image-wrapper">
+                            <img src="./assets/images/client2.png" alt="" class="img-fluid client-image">
+                        </div>
+                        <div class="client-profile-info mt-3">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="d-inline text-white mb-1">Scot Charliy</h5><span class="text-color-yellow"><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i></span>
+                            </div>
+                            <h6 class="text-color-yellow text-uppercase">OUR CLIENT</h6>
+                            <p class="client-views text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Nihil voluptatum quis nobis ea autem repellendus dolorum, qui consequuntur sequi iste
+                                eos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="our-client-profile">
+                        <div class="client-image-wrapper">
+                            <img src="./assets/images/client3.png" alt="" class="img-fluid client-image">
+                        </div>
+                        <div class="client-profile-info mt-3">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="d-inline text-white mb-1">Mathiew Faedes</h5><span
+                                    class="text-color-yellow"><i class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i></span>
+                            </div>
+                            <h6 class="text-color-yellow text-uppercase">OUR CLIENT</h6>
+                            <p class="client-views text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Nihil voluptatum quis nobis ea autem repellendus dolorum, qui consequuntur sequi iste
+                                eos.</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
 
+    <section class="blog-section mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 my-3">
+                    <h3 class="text-white text-uppercase">Our Latest <span class="text-color-yellow">
+                            <h3 class="d-inline">blogs</h3>
+                        </span></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="./assets/images/blogmain.jpg" alt="" class="img-fluid mb-3">
+                    <h5 class="text-white">Don't give up on your dreams, or your dreams will give up on you</h5>
+                    <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe!
+                        Quisquam voluptatibus nobis fugiat incidunt reprehenderit quasi asperiores amet aliquam,
+                        aspernatur dicta consectetur veritatis sapiente, rem id doloribus hic eius. Fuga accusamus ex
+                        quis animi, quod unde beatae aut veritatis.</p>
+                    <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
+                            class="fa-solid fa-arrow-up-right"></i></a>
+                </div>
+                <div class="col-sm-6 ">
+                    <div class="col-sm-12 d-flex ">
+                        <div class="col-sm-4 p-3">
+                            <img src="./assets/images/client1.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-sm-8 d-flex flex-column justify-content-center">
+                            <h5 class="text-white">Exercise is labour without weariness</h5>
+                            <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad iusto
+                                harum at aspernatur...</p>
+                            <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
+                                    class="fa-solid fa-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 d-flex ">
+                        <div class="col-sm-4 p-3">
+                            <img src="./assets/images/client3.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-sm-8 d-flex flex-column justify-content-center">
+                            <h5 class="text-white">Success usualy comes to those who are too busy to be looking for it
+                            </h5>
+                            <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad iusto
+                                harum at aspernatur...</p>
+                            <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
+                                    class="fa-solid fa-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 d-flex ">
+                        <div class="col-sm-4 p-3">
+                            <img src="./assets/images/client2.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-sm-8 d-flex flex-column justify-content-center">
+                            <h5 class="text-white">Put all excuses aside and remember this: you are capable</h5>
+                            <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad iusto
+                                harum at aspernatur...</p>
+                            <a href="#" class="read-more text-color-yellow text-decoration-none">Read More <i
+                                    class="fa-solid fa-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .progress {
+            width: 100%;
+            height: 15px;
+            transform: skewX(-35deg);
+        }
+
+        .progress-review::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 90%;
+            background-color: yellow;
+        }
+
+        .progress-recomend::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 97%;
+            background-color: yellow;
+        }
+
+        .progress-client::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 80%;
+            background-color: yellow;
+        }
+    </style>
+
+    <section class="motivation-section mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 d-flex flex-column justify-content-center">
+                    <div class="col-sm-12 my-3">
+                        <h3 class="text-white text-uppercase">Our Latest <span class="text-color-yellow">
+                                <h3 class="d-inline">blogs</h3>
+                            </span></h3>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <h5 class="text-white d-flex justify-content-between"><span>
+                                <h5>Client Review</h5>
+                            </span> <span class="text-color-yellow">
+                                <h5 class="d-inline">90%</h5>
+                            </span></h5>
+                        <div class="progress progress-review"></div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <h5 class="text-white d-flex justify-content-between"><span>
+                                <h5>Recomendation</h5>
+                            </span> <span class="text-color-yellow">
+                                <h5 class="d-inline">97%</h5>
+                            </span></h5>
+                        <div class="progress progress-recomend"></div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <h5 class="text-white d-flex justify-content-between"><span>
+                                <h5>Client Progress</h5>
+                            </span> <span class="text-color-yellow">
+                                <h5 class="d-inline">80%</h5>
+                            </span></h5>
+                        <div class="progress progress-client"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <img src="./assets/images/ourmotivation.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .social-follow-section {
+            background-color: var(--bg1);
+        }
+    </style>
+    <section class="social-follow-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 my-3">
+                    <h3 class="text-white text-uppercase">Follow us on <br><span class="text-color-yellow">
+                            <h3 class="d-inline">Instagram</h3>
+                        </span></h3>
+                </div>
+                <div class="row d-flex gap-3">
+                    <div class="col">
+                        <img src="./assets/images/follow1.jpg" alt="" class="img-fluid pb-5">
+                    </div>
+                    <div class="col">
+                        <img src="./assets/images/follow2.jpg" alt="" class="img-fluid pt-5">
+                    </div>
+                    <div class="col">
+                        <img src="./assets/images/follow3.jpg" alt="" class="img-fluid pb-5">
+                    </div>
+                    <div class="col">
+                        <img src="./assets/images/follow4.jpg" alt="" class="img-fluid pt-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .footer .img-fluid{
+            max-width: 50%;
+        }
+        .footer form input[type='mail']{
+            border: 1px solid yellow;
+            background-color: var(--bg1);
+            padding:5px 7px;
+            color: var(--white);
+        }
+        .footer form input[type='mail']:focus{
+            outline: 0 ;
+        }
+        .footer form button{
+            border: 1px solid yellow;
+            background-color: yellow;
+            padding-left: 10px ;
+            padding-right: 10px ;
+        }
+    </style>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -567,6 +787,33 @@
                 },
                 992: {
                     slidesPerView: 4,
+                    spaceBetween: 35,
+                },
+            },
+        });
+        var swiper = new Swiper(".mySwiper_client", {
+            // slidesPerView: 4,
+            // spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 3,
                     spaceBetween: 35,
                 },
             },
